@@ -1,0 +1,34 @@
+<script type="text/javascript">
+    RED.nodes.registerType('plex_server',{
+        category: 'config',
+        defaults: {
+            server: {value:"localhost",required:true},
+            client: {value:"localhost",required:true},
+            token: {value:"insert token here",required:true},
+            identifier : {value:"d2d38223-8f97-40f6-b5f2-e9e38b8d6cea", required:true}
+
+        },
+        label: function() {
+            return "Server: "+this.server+" / Client: "+this.client;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="plex_server">
+    <div class="form-row">
+        <label for="node-config-input-server"><i class="icon-bookmark"></i> Server</label>
+        <input type="text" id="node-config-input-server">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-client"><i class="icon-bookmark"></i> Client</label>
+        <input type="text" id="node-config-input-client">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-token"><i class="icon-bookmark"></i> Token</label>
+        <input type="text" id="node-config-input-token">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-identifier"><i class="icon-bookmark"></i> Identifier</label>
+        <input type="text" id="node-config-input-identifier">
+    </div>
+</script>

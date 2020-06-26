@@ -1,0 +1,62 @@
+<script type="text/javascript">
+    RED.nodes.registerType('plex',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            server: {value:"", type:"plex_server"},
+
+        },
+        inputs:1,
+        outputs:1,
+        icon: "",
+        label: function() {
+            return this.name||"plex";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="plex">
+    <style type="text/css">
+        .btn-group {
+            width: 70%;
+        }
+        .multiselect {
+            width: 100%;
+        }
+        .form-row input.multiselect-search {
+            width: 100%;
+        }
+        .multiselect-clear-filter {
+            display: none;
+        }
+        .dropdown-menu {
+            width: 100% !important;
+        }
+        .multiselect-container input[type="checkbox"] {
+            display: none;
+        }
+        .multiselect-container > li > a > label.radio {
+            margin: 5px;
+            width: 90%;
+            height: 100%;
+            cursor: pointer;
+            font-weight: 400;
+            padding: 3px 20px 3px 20px;
+        }
+        .multiselect-container label.radio input[type="radio"] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="static/css/bootstrap-multiselect.css" type="text/css" />
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i>Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-server"><i class="fa fa-globe"></i> server</label>
+        <input type="text" id="node-input-server">
+    </div>
+</script>
+
+
